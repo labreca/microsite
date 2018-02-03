@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(231, 119, 125, 0.466);
+   }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color:#ededf5;
+   }
+h1{
+	font: bold 80px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+}   
+h2{
+	font: bold 40px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+    color: #e4f529;
+} 
+h3{
+	font: bold 30px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+    color: white;
+} 
+#fundo {
+    background-image: url('http://www.atmmadeira.com/images/stories/epoca_2017-2018/pavilhao_bartolomeu.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   }  
+
+.gridItems {
+    background-color: rgb(10, 24, 233);
+    }
+footer {
+        display: grid;
+        grid-auto-flow: column;
+        align-content: space-between;
+        position: static;
+        grid-column: 1 / 4;
+        grid-row: 6 / 7;
+    }  

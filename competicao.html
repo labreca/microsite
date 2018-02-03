@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="competicao.css">
+            <title>Competição</title>
+    <script>
+    var config_mes = 9;
+    var config_dia = 7;
+    var config_ano = 2018;
+    var config_hora = 11;
+    var config_minuto = 03;
+    var config_segundo = 00;
+    
+    if ((config_mes == "janeiro") || (config_mes == 1))
+    var config_mes = "january";
+    
+    if ((config_mes == "fevereiro") || (config_mes == 2))
+    var config_mes = "february";
+    
+    if ((config_mes == "março") || (config_mes == 3))
+    var config_mes = "march";
+    
+    if ((config_mes == "abril") || (config_mes == 4))
+    var config_mes = "april";
+    
+    if ((config_mes == "maio") || (config_mes == 5))
+    var config_mes = "may";
+    
+    if ((config_mes == "junho") || (config_mes == 6))
+    var config_mes = "june";
+    
+    if ((config_mes == "julho") || (config_mes == 7))
+    var config_mes = "july";
+    
+    if ((config_mes == "agosto") || (config_mes == 8))
+    var config_mes = "august";
+    
+    if ((config_mes == "setembro") || (config_mes == 9))
+    var config_mes = "september";
+    
+    if ((config_mes == "outubro") || (config_mes == 10))
+    var config_mes = "october";
+    
+    if ((config_mes == "novembro") || (config_mes == 11))
+    var config_mes = "november";
+    if ((config_mes == "dezembro") || (config_mes == 12))
+    var config_mes = "december";
+    
+    
+    var data = new Date(config_mes+" "+ config_dia + ", " +config_ano + " " + config_hora+":"+config_minuto+":"+config_segundo).getTime();
+    
+    function zero(numero) {
+    if (numero <= 9)
+    return "0"+numero;
+    else
+    return numero;
+    }
+    
+    setInterval(function () {
+    
+        var current_date = new Date().getTime();
+        var segundos_f = (data - current_date) / 1000;
+    
+        segundos = parseInt(segundos_f % 60);
+        segundos_f = parseInt(segundos_f/60);
+    
+        minutos = parseInt(segundos_f % 60);
+        segundos_f = parseInt(segundos_f/60);
+    
+        horas = parseInt(segundos_f % 24);
+        segundos_f = parseInt(segundos_f/24);
+    
+        dias = parseInt(segundos_f % 30);
+        segundos_f = parseInt(segundos_f/30);
+    
+        mes = parseInt(segundos_f % 12);
+        segundos_f = parseInt(segundos_f/ 12);
+    
+        ano = parseInt(segundos_f % 100);
+        segundos_f = parseInt(segundos_f/100);
+    
+    if ((segundos < 0) || (minutos < 0 ) || (horas < 0 ) || (dias < 0)) {
+    ano = 0;
+    dias = 0;
+    mes = 0;
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+    }
+    
+    var retorno =  "Falta " + zero(ano) + " ano(s) " + zero(mes) + " mes(es) "+ zero(dias) +" dia(s) " + zero(horas) + " hora(s) " + zero(minutos) + " minuto(s) " + zero(segundos) + " segundo(s)";
+    if ( ano == 0 )
+    var retorno =  retorno.replace(zero(ano) + " ano(s) ","");
+    if ( mes == 0 )
+    var retorno =  retorno.replace(zero(mes) + " mes(es) ","");
+    if ( dias == 0 )
+    var retorno =  retorno.replace(zero(dias) + " dia(s) ","");
+    if ( horas == 0 )
+    var retorno =  retorno.replace(zero(horas) + " hora(s) ","");
+    if ( minutos == 0 )
+    var retorno =  retorno.replace(zero(minutos) + " minuto(s) ","");
+    document.getElementById('contagem').innerHTML = retorno;
+    
+    
+    }, 1000);
+    </script>
+    
+    <body>
+            <header id="fundo">
+                    <h1><a href="open.html">22º OPEN INTERNACIONAL DA MADEIRA</a></h1>
+                    <p><h2>Pavilhão Gimnodesportivo Bartolomeu Perestrelo</h2></p>
+                    <p><h2>7, 8 e 9 de Setembro de 2018</h2></p>
+                    <h3><span id="contagem"></span></h3>
+                </header>
+    <footer class="gridItems">
+            
+           <p>ASSOCIAÇÃO DE TÉNIS DE MESA DA MADEIRA</p>
+           <p>Rua de São João nº 2 BB</p>
+           <p>Telef. + 351 291 740 958 | Fax + 351 351 291 740 950</p>
+           <p>email: geral@atmmadeira.com</p>
+           
+           </footer>
+    </body>
+    </html>
